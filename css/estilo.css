@@ -1,0 +1,108 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    background: black;
+  }
+  
+  .parallax {
+    height: 100vh;
+    overflow-y: auto;
+    perspective: 2px;
+  }
+  
+  .layer {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+  }
+  
+  .layer-1 {
+    background: url(../imagenes/pngwing.com\ \(4\).png) center / cover no-repeat;
+    transform: translateZ(-1px) scale(1.5);
+  }
+  
+  .layer-2 {
+    background: url(../imagenes/pngwing.com.png) center / cover no-repeat;
+    transform: translateZ(-0.5px) scale(1.5);
+    top: 600px;
+  }
+  
+  .layer-3 {
+    position: relative;
+  }
+  
+  .moon {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    animation: moverLuna 20s linear infinite;
+  }
+  
+  @keyframes moverLuna {
+    0% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-40px); }
+    100% { transform: translateX(-50%) translateY(0); }
+  }
+  
+  .star {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  }
+  
+  .star-1 {
+    top: 10%;
+    left: 20%;
+    animation: twinkle 2s infinite alternate;
+  }
+  
+  .star-2 {
+    top: 40%;
+    left: 70%;
+    animation: twinkle 3s infinite alternate;
+  }
+  
+  .star-3 {
+    top: 60%;
+    left: 50%;
+    animation: twinkle 4s infinite alternate;
+  }
+  .star-4 {
+    top: 50%;
+    left: 40%;
+    animation: twinkle 4s infinite alternate;
+  }
+  
+  @keyframes twinkle {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
+  }
+  
+  .comet {
+    position: absolute;
+    top: 0;
+    left: -10%;
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    animation: moverCometa 8s linear infinite;
+  }
+  
+  @keyframes moverCometa {
+    0% { transform: translateX(0) translateY(0); opacity: 1; }
+    50% { opacity: 1; }
+    100% { transform: translateX(110vw) translateY(100vh); opacity: 0; }
+  }
